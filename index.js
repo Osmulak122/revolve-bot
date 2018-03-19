@@ -1,23 +1,12 @@
 const Discord = require('discord.js');
 var bot = new Discord.Client();
 
-
-const PREFIX = "!";
-
 bot.on("guildMemberAdd", function(member) {
     var role_rules = member.guild.roles.find('name', 'Unaccepted Rules');
     member.addRole(role_rules)
 });
 
-bot.on('messageReactionAdd', function(reaction, member) {
-    var Welcome = bot.channels.find("name", "readme");
-    console.log(reaction.channel)
-    var Emoji = "✅";
-    var rolenews = member.guild.roles.find('name', 'Unaccepted Rules');
-    if (!reaction.channel == Welcome) return;
-    if (!reaction.emoji.name == Emoji) return;
-    member.removeRole(rolenews);
-});
+
 
 bot.on("ready", function() {
     bot.user.setActivity('!help');
@@ -27,15 +16,30 @@ bot.on("ready", function() {
 
 
 bot.on("message", function(message) {
-    if (message.author.equals(bot.user)) return;
 
-    if (!message.content.startsWith(PREFIX)) return;
-        var args = message.content.substring(PREFIX.length).split(" ");
+    if (message.content == "!agree") {
+        var role_agree = message.member.guild.roles.find('name', 'Unaccepted Rules');
+        message.delete();
+        message.member.removeRole(role_agree);
+    }   
 
-        switch (args[0].toLowerCase()) {
-            case "help":
-                message.channel.send("**Commands :**\n");
-                break;
+    var channel1 = bot.channels.find('name', 'readme');
+    if (message.channel == channel1) {
+        message.delete();
+    }
+    if (message.content == "!help") {
+        message.channel.send("__**Commands :**__\n\n**!leaders**");
+    }                    
+    
+    if(message.content == "!leaders") {
+        message.channel.send("Leaders :\n**Four** :flag_es:\n**Liptik** :flag_pt:\nCo-Leaders\n**Minty** :flag_pl:\n**Yanick** :flag_nl:");
+    }
+    
+
+
+
               
-}});    
-bot.login(process.env.BOT_TOKEN);
+});    
+bot.login(process.envBOT_TOKEN);
+
+
