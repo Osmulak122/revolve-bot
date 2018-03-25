@@ -49,7 +49,7 @@ bot.on("message", function(message) {
         message.channel.send("**Actual bot code! -** https://github.com/Osmulak122/revolve-bot/blob/master/index.js");
     }
      if(message.content == "!youtube") {
-        message.channel.send("**Our Youtube! -** https://www.youtube.com/channel/UCEhO2AlVP4rqb3cRBRjH_aA");
+        message.channel.send("**Our Youtube! -** https://www.youtube.com/RevolveTeam");
     }
 
 
