@@ -28,6 +28,12 @@ bot.on("message", function(message) {
     if (message.channel == channel1) {
         message.delete();
     }
+    var channel1 = bot.channels.find('name', 'readme');
+    if (message.channel == channel1 && message.content != "!agree") {
+        message.author.send("**You have propably misspelled.**\n*Try again in `#readme` chat on Resolve discord!*");
+    }
+        
+    
     if (message.content == "!help") {
         message.channel.send("__**Commands :**__\n\n**!leaders**");
     }                    
