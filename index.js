@@ -45,7 +45,7 @@ bot.on("message", function(message) {
     }
     
     if(message.content == "!botcode") {
-        message.channel.send("**Actual bot code!** - <https://github.com/Osmulak122/revolve-bot/master/index.js>");
+        message.channel.send("**Actual bot code! -** https://github.com/Osmulak122/revolve-bot/blob/master/index.js");
     }
 
 
