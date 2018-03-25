@@ -21,7 +21,10 @@ bot.on("message", function(message) {
         var role_agree = message.member.guild.roles.find('name', 'Unaccepted Rules');
         message.delete();
         message.member.removeRole(role_agree);
-    }   
+        message.author("**Verification Completed!**\n*Welcome to the server and have fun!*");
+    }   else {
+                       message.author("**You have propably misspelled.**\n*Try again in `#readme` chat on Resolve discord!*");
+                }
 
     var channel1 = bot.channels.find('name', 'readme');
     if (message.channel == channel1) {
