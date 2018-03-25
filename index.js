@@ -22,6 +22,7 @@ bot.on("message", function(message) {
         message.delete();
         message.member.removeRole(role_agree);
         message.author.send("**Verification Completed!**\n*Welcome to the server and have fun!*");
+    }
   
     var channel1 = bot.channels.find('name', 'readme');
     if (message.channel == channel1) {
