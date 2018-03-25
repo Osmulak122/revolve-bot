@@ -38,7 +38,7 @@ bot.on("message", function(message) {
         
     
     if (message.content == "!help") {
-        message.channel.send("__**Commands :**__\n\n**!leaders**\n**!botcode**");
+        message.channel.send("__**Commands :**__\n\n**!youtube**\n**!leaders**\n**!botcode**");
     }                    
     
     if(message.content == "!leaders") {
@@ -48,7 +48,9 @@ bot.on("message", function(message) {
     if(message.content == "!botcode") {
         message.channel.send("**Actual bot code! -** https://github.com/Osmulak122/revolve-bot/blob/master/index.js");
     }
-
+     if(message.content == "!youtube") {
+        message.channel.send("**Our Youtube! -** https://youtube.com/c/RevolveTeam");
+    }
 
 
               
