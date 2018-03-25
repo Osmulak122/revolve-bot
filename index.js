@@ -22,9 +22,11 @@ bot.on("message", function(message) {
         message.delete();
         message.member.removeRole(role_agree);
         message.author.send("**Verification Completed!**\n*Welcome to the server and have fun!*");
-    }   else {
-                       message.author.send("**You have propably misspelled.**\n*Try again in `#readme` chat on Resolve discord!*");
-                }
+    else
+    {   
+        message.author.send("**You have propably misspelled.**\n*Try again in `#readme` chat on Resolve discord!*");
+        return;
+    }          
 
     var channel1 = bot.channels.find('name', 'readme');
     if (message.channel == channel1) {
