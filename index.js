@@ -25,7 +25,7 @@ bot.on("message", function(message) {
         message.delete();
         message.member.removeRole(role_agree);
         message.author.send("**Verification Completed!**\n*Welcome to the server and have fun!*");
-        message.channel(channel_logs).send.msgauthor.toString() + ", *Agreed to Rules!*");
+        message.channel(channel_logs).send(msgauthor.toString() + ", *Agreed to Rules!*");
     }
   
     var channel1 = bot.channels.find('name', 'readme');
