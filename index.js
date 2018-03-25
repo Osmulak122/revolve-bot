@@ -18,7 +18,7 @@ bot.on("ready", function() {
 bot.on("message", function(message) {
 
     var channel1 = bot.channels.find('name', 'readme');
-    var channel_logs = bot.channel.find('name', 'bot_logs');
+    var channel_logs = bot.channels.find('name', 'bot_logs');
     if (message.channel == channel1 && message.content == "!agree") {
         var role_agree = message.member.guild.roles.find('name', 'Unaccepted Rules');
         var msgauthor = message.author;
