@@ -18,7 +18,7 @@ bot.on("ready", function() {
 bot.on("message", function(message) {
 
     var channel1 = bot.channels.find('name', 'readme');
-    if (message.channel == channel1 && message.content == '!agree', 'agree', 'Agree', 'AGREE', '"agree"', '"Agree"', '"AGREE"') {
+    if (message.channel == channel1 && message.content == "!agree") {
         var role_agree = message.member.guild.roles.find('name', 'Unaccepted Rules');
         var msgauthor = message.author;
         message.delete();
@@ -32,7 +32,7 @@ bot.on("message", function(message) {
         message.delete();
     }
     var channel1 = bot.channels.find('name', 'readme');
-    if (message.channel == channel1 && message.content != '!agree', 'agree', 'Agree', 'AGREE', '"agree"', '"Agree"', '"AGREE"') {
+    if (message.channel == channel1 && message.content != "!agree") {
         message.author.send("**You have propably misspelled.**\n*Try again in `#readme` chat on Resolve discord!*");
     }
         
