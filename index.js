@@ -62,7 +62,7 @@ bot.on("message", function(message) {
             message.delete();
 
             if (!message.member.hasPermission("MANAGE_MESSAGES")) {
-                message.channel("You don't have permissions to use this command!");
+                message.channel.send("You don't have permissions to use this command!");
                 return;
             }
 
@@ -107,7 +107,7 @@ bot.on("message", function(message) {
                 .addField("ServerID",message.guild.id,true)
                 .addField("Owner", message.guild.owner.user.tag,true)
                 .addField("Members", message.guild.memberCount,true)
-                .setFooter("Server Created: " + message.guild.createdAt, sicon`)
+                .setFooter("Server Created: " + message.guild.createdAt, sicon)
 
             message.channel.send(serverinfoembed);
         }
