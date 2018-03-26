@@ -16,27 +16,21 @@ bot.on("ready", function() {
 
 
 bot.on("message", function(message) {
+    var msg = message.content.toUpperCase();
+    var msgauthor = message.author;
+    var channel1 = bot.channels.find('name', 'readme');
 
-    var channel1 = bot.channels.find('name', 'readme');
-    if (message.channel == channel1 && message.content == "!agree") {
-        var role_agree = message.member.guild.roles.find('name', 'Unaccepted Rules');
-        var msgauthor = message.author;
-        message.delete();
-        message.member.removeRole(role_agree);
+    if (message.channel == channel1 && msg == "!agree" || msg == "!Agree" || msg == "!AGREE" || msg == '"agree"' || msg == '"Agree"' || msg == '"AGREE"' || msg == "agree" || msg == "Agree" || msg == "AGREE" || msg == '"!agree"' || msg == '"!Agree"'|| msg == '"!AGREE"') {
+        var role_rules = message.member.guild.roles.find('name', 'Unaccepted Rules');
+        message.member.removeRole(role_rules);
         message.author.send("**Verification Completed!**\n*Welcome to the server and have fun!*");
-        bot.channels.get('427462422299672577').send(msgauthor.toString() + ", *Agreed to Rules!*");
+        bot.channels.find('name', 'bot-logs').send(msgauthor.toString() + ", *Agreed to Rules!*");
     }
-  
-    var channel1 = bot.channels.find('name', 'readme');
+
     if (message.channel == channel1) {
         message.delete();
     }
-    var channel1 = bot.channels.find('name', 'readme');
-    if (message.channel == channel1 && message.content != "!agree") {
-        message.author.send("**You have propably misspelled.**\n*Try again in `#readme` chat on Resolve discord!*");
-    }
-        
-    
+            
     if (message.content == "!help") {
         message.channel.send("__**Commands :**__\n\n**!youtube**\n**!leaders**\n**!botcode**\n\n__**Music:**__\n**?play** *<link>*\n");
     }                    
