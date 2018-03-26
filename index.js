@@ -71,7 +71,7 @@ bot.on("message", function(message) {
                 return;
             }
 
-            const fetched = await message.channel.fetchMessages({limit: args[0]} + 1);
+            const fetched = await message.channel.fetchMessages({limit: args[0]});
             message.channel.bulkDelete(fetched)
                 .catch(error => message.channel.send("Can't clear the chat!"));
 
