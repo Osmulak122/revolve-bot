@@ -30,24 +30,24 @@ bot.on("message", function(message) {
         message.member.removeRole(role_rules);
         message.author.send("**Verification Completed!**\n*Welcome to the server and have fun!*");
         bot.channels.find('name', 'bot-logs').send(msgauthor.toString() + ", *Agreed to Rules!*");
-    }
+    } 
 
     if (message.channel == channel1) {
         message.delete();
     }
    
-    if (msg == "!help") {
-        message.channel.send("__**Commands :**__\n\n**!youtube**\n**!leaders**\n**!botcode**\n\n__**Music:**__\n**?play** *<link>*\n");
+    if (msg == prefix + "help") {
+        message.channel.send("__**Commands :**__\n\n**!youtube**\n**!leaders**\n**!botcode**\n\n__**Music:**__\n**!musicbot** *Some music commands*");
     }                    
     
-    if(msg == "!leaders") {
+    if(msg == prefix + "leaders") {
         message.channel.send("Leaders :\n**Four** :flag_es:\n**Liptik** :flag_pt:\nCo-Leaders\n**Minty** :flag_pl:\n**Yanick** :flag_nl:");
     }
     
-    if(msg == "!botcode") {
+    if(msg == prefix + "botcode") {
         message.channel.send("**Actual bot code! -** https://github.com/Osmulak122/revolve-bot/blob/master/index.js");
     }
-     if(msg == "!youtube") {
+     if(msg == prefix + "youtube") {
         message.channel.send("**Our Youtube! -** https://www.youtube.com/RevolveTeam");
     }
 
