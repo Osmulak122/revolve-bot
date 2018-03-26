@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 var bot = new Discord.Client();
+const prefix = "!";
+
 
 bot.on("guildMemberAdd", function(member) {
     var role_rules = member.guild.roles.find('name', 'Unaccepted Rules');
@@ -76,7 +78,7 @@ bot.on("message", function(message) {
     }
  
               
-});    
+
               
 });    
 bot.login(process.env.BOT_TOKEN);
