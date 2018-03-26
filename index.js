@@ -38,7 +38,7 @@ bot.on("message", function(message) {
         
     
     if (message.content == "!help") {
-        message.channel.send("__**Commands :**__\n\n**!youtube**\n**!leaders**\n**!botcode**");
+        message.channel.send("__**Commands :**__\n\n**!youtube**\n**!leaders**\n**!botcode**\n\n__**Music:**__\n**?play** *<link>*\n");
     }                    
     
     if(message.content == "!leaders") {
