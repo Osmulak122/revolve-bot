@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 var bot = new Discord.Client();
 const prefix = "!";
 
-
 bot.on("guildMemberAdd", function(member) {
     var role_rules = member.guild.roles.find('name', 'Unaccepted Rules');
     member.addRole(role_rules)
@@ -15,6 +14,8 @@ bot.on("ready", function() {
     console.log("Im Ready!");
 });
 
+
+
 bot.on("message", function(message) {
 
     var msg = message.content.toLowerCase();
@@ -23,7 +24,8 @@ bot.on("message", function(message) {
     var msgauthor = message.author;
     var channel1 = bot.channels.find('name', 'readme');
 
-   if (message.channel == channel1 && msg == "!agree" || msg == "!Agree" || msg == "!AGREE" || msg == '"agree"' || msg == '"Agree"' || msg == '"AGREE"' || msg == "agree" || msg == "Agree" || msg == "AGREE" || msg == '"!agree"' || msg == '"!Agree"'|| msg == '"!AGREE"') {
+
+    if (message.channel == channel1 && msg == "!agree" || msg == "!Agree" || msg == "!AGREE" || msg == '"agree"' || msg == '"Agree"' || msg == '"AGREE"' || msg == "agree" || msg == "Agree" || msg == "AGREE" || msg == '"!agree"' || msg == '"!Agree"'|| msg == '"!AGREE"') {
         var role_rules = message.member.guild.roles.find('name', 'Unaccepted Rules');
         message.member.removeRole(role_rules);
         message.author.send("**Verification Completed!**\n*Welcome to the server and have fun!*");
@@ -76,11 +78,10 @@ bot.on("message", function(message) {
  }
         clear();
     }
+    
  
               
-
-              
-});    
+});      
 bot.login(process.env.BOT_TOKEN);
 
 
