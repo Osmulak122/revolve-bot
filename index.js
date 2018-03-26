@@ -78,7 +78,22 @@ bot.on("message", function(message) {
  }
         clear();
     }
-    
+            if(msg == "!musicbot") {
+                var musichelp = new Discord.RichEmbed()
+                    .setDescription("Music Bot Commands!")
+                    .setThumbnail(bot.users.find("id", "235088799074484224").avatarURL)
+                    .addField("?play <link>", "Queueing song", true)
+                    .addField("?skip", "Skips the song", true)
+                    .addField("?join", "Summons bot", true)
+                    .addField("?leave", "Disconnects from channel", true)
+                    .addField("?pause", "Pauses playback",true)
+                    .addField("?resume", "Resumes playback",true)
+                    .addField("?shuffle", "Shuffles Queue",true)
+                    .addField("?queue", "Shows current queue", true)
+                    .setColor(0xE6A12D)
+
+                message.channel.send(musichelp);
+        }
  
               
 });      
