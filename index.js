@@ -90,8 +90,9 @@ bot.on("message", function(message) {
                     .addField("?resume", "Resumes playback",true)
                     .addField("?shuffle", "Shuffles Queue",true)
                     .addField("?queue", "Shows current queue", true)
+                    .setFooter('Remember that music commands are executed with "?" prefix.')
                     .setColor(0xE6A12D)
-
+                    
                 message.channel.send(musichelp);
         }
  
