@@ -39,7 +39,7 @@ bot.on("message", function(message) {
     }
    
     if (msg == prefix + "help") {
-        message.channel.send("__**Commands :**__\n\n**!youtube**\n**!leaders**\n**!botcode**\n\n__**Music:**__\n**!musicbot** *Some music commands*");
+        message.channel.send("__**Commands :**__\n\n**!youtube**\n**!leaders**\n**!botcode**\n**!serverinfo**\n\n__**Music:**__\n**!musicbot** *Some music commands*");
     }                    
     
     if(msg == prefix + "leaders") {
@@ -96,6 +96,20 @@ bot.on("message", function(message) {
                     .setColor(0xE6A12D)
                     
                 message.channel.send(musichelp);
+        }
+        if(msg == prefix + "serverinfo") {
+            var sicon = message.guild.iconURL;
+            var serverinfoembed = new Discord.RichEmbed()
+                .setAuthor(message.guild.name, sicon)
+                .setColor(0x0047B2)
+                .setThumbnail(sicon)
+                .addField("Name", message.guild.name,true)
+                .addField("ServerID",message.guild.id,true)
+                .addField("Owner", message.guild.owner.user.tag,true)
+                .addField("Members", message.guild.memberCount,true)
+                .setFooter("Server Created: " + message.guild.createdAt, sicon`)
+
+            message.channel.send(serverinfoembed);
         }
  
               
