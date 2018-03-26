@@ -24,21 +24,18 @@ bot.on("message", function(message) {
     var msgauthor = message.author;
     var channel1 = bot.channels.find('name', 'readme');
 
-
-     if (message.channel == channel1 && msg == "!agree" || msg == "!Agree" || msg == "!AGREE" || msg == '"agree"' || msg == '"Agree"' || msg == '"AGREE"' || msg == "agree" || msg == "Agree" || msg == "AGREE" || msg == '"!agree"' || msg == '"!Agree"'|| msg == '"!AGREE"') {
-        var role_rules = message.member.guild.roles.find('name', 'Unaccepted Rules');
-        message.member.removeRole(role_rules);
-        message.author.send("**Verification Completed!**\n*Welcome to the server and have fun!*");
-        bot.channels.find('name', 'bot-logs').send(msgauthor.toString() + ", *Agreed to Rules!*");
-
-    }   else if(message.channel != channel1) { return;
-
-    }   else {
-        message.author.send("**You have propably misspelled.**\n*Try again in `#readme` chat on Resolve discord!*");
-            }
-    
-    if (message.channel == channel1) {
+     if (message.channel == channel1) {
         message.delete();
+    }
+
+    if(message.channel == channel1) {
+        if (msg == "!agree" || msg == "!Agree" || msg == "!AGREE" || msg == '"agree"' || msg == '"Agree"' || msg == '"AGREE"' || msg == "agree" || msg == "Agree" || msg == "AGREE" || msg == '"!agree"' || msg == '"!Agree"'|| msg == '"!AGREE"') {
+            var role_rules = message.member.guild.roles.find('name', 'Unaccepted Rules');
+            message.member.removeRole(role_rules);
+            message.author.send("**Verification Completed!**\n*Welcome to the server and have fun!*");
+            bot.channels.find('name', 'bot-logs').send(msgauthor.toString() + ", *Agreed to Rules!*");
+        } else
+             message.author.send("**You have propably misspelled.**\n*Try again in `#readme` chat on Resolve discord!*");
     }
    
     if (msg == prefix + "help") {
